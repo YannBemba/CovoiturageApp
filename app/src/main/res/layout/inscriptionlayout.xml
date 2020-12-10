@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/sombre"
+    android:layout_margin="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inscription"
+        android:textSize="23sp"
+        android:textColor="@color/light"
+        android:fontFamily="sans-serif-black"
+        android:padding="25dp"/>
+
+    <Button
+        android:id="@+id/inscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#7a8eff"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/hockey_match_monochromatic"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CategoryApp</string>
+    <string name="categorie">Catégories</string>
+    <string name="inscription">Inscription</string>
+    <string name="suivant">Suivant</string>
+    <string name="connexion">Connexion</string>
+    <string name="forget_pass">Mot de passe oublié</string>
+    <string name="apropos">A propos</string>
+    <string name="nomcomplet">Nom Complet</string>
+    <string name="createaccount">Créer un compte</string>
+    <string name="username">Pseudo</string>
+    <string name="email">Email</string>
+    <string name="tel">Téléphone portable</string>
+    <string name="pass">Mot de passe</string>
+    <string name="nom">Nom</string>
+    <string name="seconnecter">Se connecter</string>
+    <string name="civilite">Civilité</string>
+    <string name="passupdate">Mot de passe modifié</string>
+    <string name="passupdatemessage">Votre mot de passe a bien été modifiée</string>
+    <string name="pseudo">Pseudo</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controlleur.CategoryActivity"
+    android:background="@drawable/custom_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_home_black_24dp"
+                android:padding="15dp"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_search_black_24dp"
+                android:padding="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/categorie"
+            android:textSize="36sp"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-black"
+            android:textAllCaps="true"
+            android:padding="10dp"/>
+
+
+        <include layout="@layout/inscriptionlayout" />
+        <include layout="@layout/secondelement" />
+        <include layout="@layout/thirdelement" />
+
+    </LinearLayout>
+
+</ScrollView>
