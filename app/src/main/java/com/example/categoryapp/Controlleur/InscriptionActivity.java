@@ -122,21 +122,27 @@ public class InscriptionActivity extends AppCompatActivity {
     public void confirmerSaisie(View view) {
 
         Enseignant enseignant = new Enseignant(getPseudo(), getNomComplet(), getEmail(), getTel(), getMdp());
-        Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
 
-        intent.putExtra("Enseignant", enseignant);
+        if(!valider()){
+            return;
 
-        String infoSaisie = "Pseudo : " + getPseudo();
+        } else {
 
-        MotionToast.Companion.darkToast(this,
-                "Inscription réussie",
-                infoSaisie,
-                MotionToast.TOAST_SUCCESS,
-                MotionToast.GRAVITY_BOTTOM,
-                MotionToast.LONG_DURATION,
-                ResourcesCompat.getFont(this, R.font.helvetica_regular));
+            Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
+            intent.putExtra("Enseignant", enseignant);
 
-        startActivity(intent);
+            String infoSaisie = "Pseudo : " + getPseudo();
+
+            MotionToast.Companion.darkToast(this,
+                    "Inscription réussie",
+                    infoSaisie,
+                    MotionToast.TOAST_SUCCESS,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this, R.font.helvetica_regular));
+
+            startActivity(intent);
+        }
 
 
     }

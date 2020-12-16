@@ -40,8 +40,9 @@
             android:textColor="@color/material_on_background_emphasis_high_type"
             android:textSize="18sp"
             android:textAlignment="textStart" />
+
         <Spinner
-            android:id="@+id/spinListPraticiens"
+            android:id="@+id/spinLisEnseignant"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/spinner_background_custom"
