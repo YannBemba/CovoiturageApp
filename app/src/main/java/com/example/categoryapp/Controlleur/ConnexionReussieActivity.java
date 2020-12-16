@@ -20,7 +20,7 @@ public class ConnexionReussieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connexion_reussie);
 
-        mLottieAnimationView = findViewById(R.id.animation_success);
+        mLottieAnimationView = (LottieAnimationView) findViewById(R.id.animation_success);
 
         new Handler().postDelayed(new Runnable() {
             @Override

@@ -17,14 +17,13 @@ import www.sanju.motiontoast.MotionToast;
 public class InscriptionActivity extends AppCompatActivity {
 
     //Variables
-    TextInputLayout pseudo, nomComplet, email, tel, mdp;
+    private TextInputLayout pseudo, nomComplet, email, tel, mdp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
-        //Déclaration
         pseudo = findViewById(R.id.pseudo);
         nomComplet = findViewById(R.id.nomComplet);
         email = findViewById(R.id.email);
@@ -36,19 +35,15 @@ public class InscriptionActivity extends AppCompatActivity {
     private String getPseudo(){
         return pseudo.getEditText().getText().toString();
     }
-
     private String getNomComplet() {
         return nomComplet.getEditText().getText().toString();
     }
-
     private String getEmail(){
         return email.getEditText().getText().toString();
     }
-
     private String getTel(){
         return tel.getEditText().getText().toString();
     }
-
     private String getMdp() {
         return mdp.getEditText().getText().toString();
     }
@@ -57,11 +52,10 @@ public class InscriptionActivity extends AppCompatActivity {
         String strEmail = getEmail().trim();
 
         if (strEmail.isEmpty()){
-            email.setError("Ce champ doit être rempli");
+            email.setError("L'email doit être rempli");
             return false;
         } else {
             email.setError(null);
-            email.setErrorEnabled(false);
             return true;
         }
     }
@@ -70,7 +64,7 @@ public class InscriptionActivity extends AppCompatActivity {
         String strNomComp = getNomComplet().trim();
 
         if(strNomComp.isEmpty()){
-            nomComplet.setError("Ce champ doit être rempli");
+            nomComplet.setError("Le nom doit être rempli");
             return false;
         } else {
             nomComplet.setError(null);
@@ -125,30 +119,25 @@ public class InscriptionActivity extends AppCompatActivity {
                 !validerPseudo() | !validerTel());
     }
 
-    public void confirmerSaisie(View view){
+    public void confirmerSaisie(View view) {
 
-        if(!valider()){
-            return;
+        Enseignant enseignant = new Enseignant(getPseudo(), getNomComplet(), getEmail(), getTel(), getMdp());
+        Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
 
-        } else {
+        intent.putExtra("Enseignant", enseignant);
 
-            Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
+        String infoSaisie = "Pseudo : " + getPseudo();
 
-            Enseignant enseignant = new Enseignant(getPseudo(), getNomComplet(), getEmail(), getTel(), getMdp());
-            intent.putExtra("Enseignant", enseignant);
+        MotionToast.Companion.darkToast(this,
+                "Inscription réussie",
+                infoSaisie,
+                MotionToast.TOAST_SUCCESS,
+                MotionToast.GRAVITY_BOTTOM,
+                MotionToast.LONG_DURATION,
+                ResourcesCompat.getFont(this, R.font.helvetica_regular));
 
-            String infoSaisie = "Pseudo : " + getPseudo();
+        startActivity(intent);
 
-            MotionToast.Companion.darkToast(this,
-                    "Inscription réussie",
-                    infoSaisie,
-                    MotionToast.TOAST_SUCCESS,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this, R.font.helvetica_regular));
-
-            startActivity(intent);
-        }
 
     }
 

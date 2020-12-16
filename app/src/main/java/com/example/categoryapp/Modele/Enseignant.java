@@ -4,6 +4,7 @@ package com.example.categoryapp.Modele;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Enseignant implements Parcelable {
@@ -15,7 +16,7 @@ public class Enseignant implements Parcelable {
     private String telephone;
     private String mdp;
 
-    private static List<Enseignant> enseignants;
+    private static List<Enseignant> enseignants = new ArrayList<>();
 
     public Enseignant(String strPseudo, String strNomComplet, String strEmail, String strTel, String strMdp){
         this.pseudo = strPseudo;
@@ -24,6 +25,7 @@ public class Enseignant implements Parcelable {
         this.telephone = strTel;
         this.mdp = strMdp;
         id++;
+        this.addEnseigant();
     }
 
     //GETTER
@@ -43,11 +45,12 @@ public class Enseignant implements Parcelable {
     public String getTelephone() { return telephone; }
     public String getMdp() { return mdp; }
 
-    public static List<Enseignant> addEnseigant(Enseignant unEnseignant) {
-        for (Enseignant e: enseignants) {
-            enseignants.add(unEnseignant);
-        }
+    public static List<Enseignant> getEnseignants() {
         return enseignants;
+    }
+
+    public void addEnseigant() {
+        enseignants.add(new Enseignant(pseudo, nomComplet, email, telephone, mdp));
     }
     //SETTER
 

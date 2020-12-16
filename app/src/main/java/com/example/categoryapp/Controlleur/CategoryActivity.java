@@ -37,19 +37,19 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         switch(v.getId()){
             case R.id.inscription :
-                Intent intentInscription = new Intent(getApplicationContext(), InscriptionActivity.class);
+                Intent intentInscription = new Intent(CategoryActivity.this, InscriptionActivity.class);
                 startActivity(intentInscription);
                 Toast.makeText(this, "Inscription", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.connexion:
-                Intent intentConnexion = new Intent(getApplicationContext(), ConnexionActivity.class);
+                Intent intentConnexion = new Intent(CategoryActivity.this, ConnexionActivity.class);
                 startActivity(intentConnexion);
                 Toast.makeText(this, "Connexion", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.apropos:
-                Intent intentAPropos = new Intent(getApplicationContext(), AboutActivity.class);
+                Intent intentAPropos = new Intent(CategoryActivity.this, AboutActivity.class);
                 startActivity(intentAPropos);
                 Toast.makeText(this, "A propos", Toast.LENGTH_SHORT).show();
                 break;
